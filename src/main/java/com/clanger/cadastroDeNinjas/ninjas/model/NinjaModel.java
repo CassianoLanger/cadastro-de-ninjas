@@ -4,15 +4,13 @@ import com.clanger.cadastroDeNinjas.missoes.model.MissionsModel;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
-@Data
 @Entity
+@Table(name = "tb_ninjas")
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "tb_ninjas")
 public class NinjaModel {
 
     @Id
@@ -21,6 +19,7 @@ public class NinjaModel {
 
     private String name;
 
+    @Column(unique = true)
     private String email;
 
     private int age;

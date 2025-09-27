@@ -6,13 +6,13 @@ import lombok.*;
 
 import java.util.Set;
 
-@Data
 @Entity
+@Table(name = "tb_missions")
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "tb_missions")
 public class MissionsModel {
 
     @Id
