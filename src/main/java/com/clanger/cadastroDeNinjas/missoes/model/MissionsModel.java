@@ -17,8 +17,13 @@ public class MissionsModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "level", nullable = false)
     private String level;
 
     @OneToMany(mappedBy = "mission")
