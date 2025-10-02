@@ -1,6 +1,6 @@
 package com.clanger.cadastroDeNinjas.ninjas.model;
 
-import com.clanger.cadastroDeNinjas.missoes.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
 import jakarta.persistence.*;
 import lombok.*;
 

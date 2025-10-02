@@ -1,4 +1,4 @@
-package com.clanger.cadastroDeNinjas.missoes.model;
+package com.clanger.cadastroDeNinjas.missions.model;
 
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
 import jakarta.persistence.*;
