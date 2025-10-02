@@ -1,6 +1,7 @@
 package com.clanger.cadastroDeNinjas.missions.model;
 
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,6 +27,7 @@ public class MissionsModel {
     private String level;
 
     @OneToMany(mappedBy = "mission")
+    @JsonIgnore
     private Set<NinjaModel> ninja;
 
 }

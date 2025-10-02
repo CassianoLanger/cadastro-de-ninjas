@@ -1,10 +1,20 @@
 package com.clanger.cadastroDeNinjas.ninjas.controller;
 
+import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.ninjas.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/ninja")
+@RequestMapping("/ninjas")
 public class NinjaController {
+
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/boas-vindas")
     public String boasVindas(){
@@ -19,8 +29,8 @@ public class NinjaController {
 
     // Mostrar todos os ninjas(Read)
     @GetMapping("/all")
-    public String getAllNinjas(){
-        return "all";
+    public List<NinjaModel> getAllNinjas(){
+        return ninjaService.getAllNinjas();
     }
 
     // Procurar ninja por ID(Read)
