@@ -5,12 +5,13 @@ import com.clanger.cadastroDeNinjas.ninjas.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
 public class NinjaController {
 
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
@@ -34,9 +35,9 @@ public class NinjaController {
     }
 
     // Procurar ninja por ID(Read)
-    @GetMapping("/get-id")
-    public String getNinjaById(){
-        return "id: " ;
+    @GetMapping("/ninja/{id}")
+    public NinjaModel getNinjaById(@PathVariable Long id){
+        return ninjaService.findById(id);
     }
 
     //Alterar dados do ninja(Update)

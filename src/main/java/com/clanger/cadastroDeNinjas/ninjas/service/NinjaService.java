@@ -5,11 +5,12 @@ import com.clanger.cadastroDeNinjas.ninjas.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NinjaService {
 
-    private NinjaRepository ninjaRepository;
+    private final NinjaRepository ninjaRepository;
 
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
@@ -21,5 +22,10 @@ public class NinjaService {
 
     public NinjaModel saveNinja(NinjaModel ninja){
         return ninjaRepository.save(ninja);
+    }
+
+    public NinjaModel findById(Long id){
+        Optional<NinjaModel> ninjaById = ninjaRepository.findById(id);
+        return ninjaById.orElse(null);
     }
 }
