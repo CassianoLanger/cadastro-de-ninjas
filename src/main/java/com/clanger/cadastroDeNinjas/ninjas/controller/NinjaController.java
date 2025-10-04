@@ -23,9 +23,9 @@ public class NinjaController {
     }
 
     // Adicionar ninja(Create)
-    @GetMapping("/new-ninja")
-    public String postNinja(){
-        return "New ninja is on db now";
+    @PostMapping("/new-ninja")
+    public NinjaModel postNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.saveNinja(ninja);
     }
 
     // Mostrar todos os ninjas(Read)
