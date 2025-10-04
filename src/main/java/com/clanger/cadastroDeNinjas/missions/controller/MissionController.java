@@ -1,28 +1,39 @@
 package com.clanger.cadastroDeNinjas.missions.controller;
 
+import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.missions.service.MissionService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/mission")
+@RequestMapping("/missions")
 public class MissionController {
 
-    @GetMapping("/get-missions")
-    public String getMissions(){
-        return "missions";
+    private final MissionService missionService;
+
+    public MissionController(MissionService missionService){
+        this.missionService = missionService;
     }
 
-    @PostMapping("/new-mission")
-    public String postMission(){
-        return "missions d-c-b-a-s";
+    @GetMapping("/all")
+    public List<MissionsModel> getMissions(){
+        return missionService.getAll();
     }
 
-    @PutMapping("/update-mission")
-    public String putMission(){
-        return "mission updated";
+    @PostMapping("/new")
+    public MissionsModel postMission(@RequestBody MissionsModel mission){
+        return missionService.postMission(mission);
     }
 
-    @DeleteMapping("/delete-mission")
-    public String deleteMission(){
-        return "mission deleted";
+//    @PutMapping("/{id}}")
+//    public MissionsModel putMission(@RequestBody MissionsModel mission,
+//                                    @PathVariable Long id){
+//        return missionService.putMission(mission, id);
+//    }
+
+    @DeleteMapping("/{id}")
+    public void deleteMission(@PathVariable Long id){
+        missionService.deleteMission(id);
     }
 }
