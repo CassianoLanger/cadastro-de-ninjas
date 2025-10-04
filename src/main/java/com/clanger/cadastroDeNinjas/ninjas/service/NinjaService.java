@@ -28,4 +28,8 @@ public class NinjaService {
         Optional<NinjaModel> ninjaById = ninjaRepository.findById(id);
         return ninjaById.orElse(null);
     }
+
+    public void daleteById(Long id){
+        ninjaRepository.deleteById(id);
+    }
 }
