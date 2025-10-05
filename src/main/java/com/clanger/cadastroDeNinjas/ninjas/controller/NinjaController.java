@@ -1,11 +1,11 @@
 package com.clanger.cadastroDeNinjas.ninjas.controller;
 
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
 import com.clanger.cadastroDeNinjas.ninjas.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
@@ -23,31 +23,32 @@ public class NinjaController {
     }
 
     // Adicionar ninja(Create)
-    @PostMapping("/new-ninja")
-    public NinjaModel postNinja(@RequestBody NinjaModel ninja){
+    @PostMapping("/new")
+    public NinjaDTO postNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.saveNinja(ninja);
     }
 
     // Mostrar todos os ninjas(Read)
     @GetMapping("/all")
-    public List<NinjaModel> getAllNinjas(){
+    public List<NinjaDTO> getAllNinjas(){
         return ninjaService.getAllNinjas();
     }
 
     // Procurar ninja por ID(Read)
-    @GetMapping("/ninja/{id}")
-    public NinjaModel getNinjaById(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public NinjaDTO getNinjaById(@PathVariable Long id){
         return ninjaService.findById(id);
     }
 
     //Alterar dados do ninja(Update)
-    @PutMapping("/update-ninja")
-    public String updateNinja(){
-        return "id: 1";
+    @PutMapping("/{id}")
+    public NinjaDTO updateNinja(@PathVariable Long id,
+                              @RequestBody NinjaDTO ninja){
+        return ninjaService.putNinja(id, ninja);
     }
 
     //Deletar Ninja(Delete)
-    @DeleteMapping("/delete-ninja/{id}")
+    @DeleteMapping("/{id}")
     public void deleteNinja(@PathVariable Long id){
          ninjaService.daleteById(id);
     }
