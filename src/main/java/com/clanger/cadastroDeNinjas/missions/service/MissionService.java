@@ -25,13 +25,7 @@ public class MissionService {
 
     public List<MissionsDTO> getAll() {
         List<MissionsModel> missions = new LinkedList<>(missionRepository.findAll());
-        return missions.stream().map(e -> {
-            return  MissionsDTO.builder()
-                    .id(e.getId())
-                    .name(e.getName())
-                    .level(e.getLevel())
-                    .build();
-        }).collect(Collectors.toList());
+        return missions.stream().map(missionsMapper::map).collect(Collectors.toList());
     }
 
     public MissionsDTO postMission(MissionsDTO missionsDTO) {
