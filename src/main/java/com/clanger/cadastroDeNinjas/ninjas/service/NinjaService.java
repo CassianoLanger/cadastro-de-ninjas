@@ -1,6 +1,8 @@
 package com.clanger.cadastroDeNinjas.ninjas.service;
 
+import com.clanger.cadastroDeNinjas.ninjas.model.mapper.NinjaMapper;
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
 import com.clanger.cadastroDeNinjas.ninjas.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,17 +13,21 @@ import java.util.Optional;
 public class NinjaService {
 
     private final NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     public List<NinjaModel> getAllNinjas(){
         return ninjaRepository.findAll();
     }
 
-    public NinjaModel saveNinja(NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    public NinjaDTO saveNinja(NinjaDTO ninjaDTO){
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     public NinjaModel findById(Long id){

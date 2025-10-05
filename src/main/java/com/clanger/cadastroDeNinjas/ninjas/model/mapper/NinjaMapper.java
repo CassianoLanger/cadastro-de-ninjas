@@ -1,4 +1,4 @@
-package com.clanger.cadastroDeNinjas.ninjas.mapper;
+package com.clanger.cadastroDeNinjas.ninjas.model.mapper;
 
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
 import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;

@@ -26,6 +26,9 @@ public class NinjaModel {
     @Column(name = "age", nullable = false)
     private int age;
 
+    @Column(name = "rank")
+    private String rank;
+
     @ManyToOne
     @JoinColumn(name = "mission_id")
     private MissionsModel mission;

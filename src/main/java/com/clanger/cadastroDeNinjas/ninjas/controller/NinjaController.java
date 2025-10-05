@@ -1,11 +1,11 @@
 package com.clanger.cadastroDeNinjas.ninjas.controller;
 
 import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
 import com.clanger.cadastroDeNinjas.ninjas.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
@@ -24,7 +24,7 @@ public class NinjaController {
 
     // Adicionar ninja(Create)
     @PostMapping("/new-ninja")
-    public NinjaModel postNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO postNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.saveNinja(ninja);
     }
 
