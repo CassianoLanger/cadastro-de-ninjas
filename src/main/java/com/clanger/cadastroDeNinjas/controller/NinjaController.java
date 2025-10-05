@@ -1,8 +1,9 @@
-package com.clanger.cadastroDeNinjas.ninjas.controller;
+package com.clanger.cadastroDeNinjas.controller;
 
-import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
-import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
-import com.clanger.cadastroDeNinjas.ninjas.service.NinjaService;
+import com.clanger.cadastroDeNinjas.model.dto.NinjaDTO;
+import com.clanger.cadastroDeNinjas.service.NinjaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,8 +25,10 @@ public class NinjaController {
 
     // Adicionar ninja(Create)
     @PostMapping("/new")
-    public NinjaDTO postNinja(@RequestBody NinjaDTO ninja){
-        return ninjaService.saveNinja(ninja);
+    public ResponseEntity<String> postNinja(@RequestBody NinjaDTO ninja){
+        NinjaDTO newNinja = ninjaService.saveNinja(ninja);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("New ninja succsseful created: " + newNinja.getName() + " ID: " + newNinja.getId());
     }
 
     // Mostrar todos os ninjas(Read)
@@ -49,7 +52,14 @@ public class NinjaController {
 
     //Deletar Ninja(Delete)
     @DeleteMapping("/{id}")
-    public void deleteNinja(@PathVariable Long id){
-         ninjaService.daleteById(id);
+    public ResponseEntity<String> deleteNinja(@PathVariable Long id){
+
+        if(ninjaService.findById(id) != null){
+            ninjaService.daleteById(id);
+            return ResponseEntity.ok().body("Ninja " + id + " successful deleted");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID "+ id + " not found");
+        }
+
     }
 }

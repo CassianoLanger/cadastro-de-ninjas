@@ -1,7 +1,7 @@
-package com.clanger.cadastroDeNinjas.missions.model.mapper;
+package com.clanger.cadastroDeNinjas.model.mapper;
 
-import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
-import com.clanger.cadastroDeNinjas.missions.model.dto.MissionsDTO;
+import com.clanger.cadastroDeNinjas.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.model.dto.MissionsDTO;
 import org.springframework.stereotype.Component;
 
 @Component

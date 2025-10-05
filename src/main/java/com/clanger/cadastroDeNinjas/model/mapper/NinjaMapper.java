@@ -1,7 +1,7 @@
-package com.clanger.cadastroDeNinjas.ninjas.model.mapper;
+package com.clanger.cadastroDeNinjas.model.mapper;
 
-import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
-import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
+import com.clanger.cadastroDeNinjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.model.dto.NinjaDTO;
 import org.springframework.stereotype.Component;
 
 @Component

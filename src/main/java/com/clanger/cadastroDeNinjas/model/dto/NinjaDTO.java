@@ -1,9 +1,6 @@
-package com.clanger.cadastroDeNinjas.ninjas.model.dto;
+package com.clanger.cadastroDeNinjas.model.dto;
 
-import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.clanger.cadastroDeNinjas.model.MissionsModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

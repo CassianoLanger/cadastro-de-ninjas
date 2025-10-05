@@ -1,6 +1,5 @@
-package com.clanger.cadastroDeNinjas.missions.model;
+package com.clanger.cadastroDeNinjas.model;
 
-import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;

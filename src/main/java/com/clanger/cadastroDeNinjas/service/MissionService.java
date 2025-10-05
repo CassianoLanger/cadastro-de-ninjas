@@ -1,14 +1,13 @@
-package com.clanger.cadastroDeNinjas.missions.service;
+package com.clanger.cadastroDeNinjas.service;
 
-import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
-import com.clanger.cadastroDeNinjas.missions.model.dto.MissionsDTO;
-import com.clanger.cadastroDeNinjas.missions.model.mapper.MissionsMapper;
-import com.clanger.cadastroDeNinjas.missions.repository.MissionRepository;
+import com.clanger.cadastroDeNinjas.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.model.dto.MissionsDTO;
+import com.clanger.cadastroDeNinjas.model.mapper.MissionsMapper;
+import com.clanger.cadastroDeNinjas.repository.MissionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -46,5 +45,9 @@ public class MissionService {
         } else {
             return null;
         }
+    }
+
+    public MissionsDTO getMission(Long id) {
+        return missionRepository.findById(id).map(missionsMapper::map).orElse(null);
     }
 }

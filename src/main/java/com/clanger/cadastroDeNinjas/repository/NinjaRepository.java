@@ -1,6 +1,6 @@
-package com.clanger.cadastroDeNinjas.ninjas.repository;
+package com.clanger.cadastroDeNinjas.repository;
 
-import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.model.NinjaModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

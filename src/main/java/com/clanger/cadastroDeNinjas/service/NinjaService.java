@@ -1,9 +1,9 @@
-package com.clanger.cadastroDeNinjas.ninjas.service;
+package com.clanger.cadastroDeNinjas.service;
 
-import com.clanger.cadastroDeNinjas.ninjas.model.mapper.NinjaMapper;
-import com.clanger.cadastroDeNinjas.ninjas.model.NinjaModel;
-import com.clanger.cadastroDeNinjas.ninjas.model.dto.NinjaDTO;
-import com.clanger.cadastroDeNinjas.ninjas.repository.NinjaRepository;
+import com.clanger.cadastroDeNinjas.model.mapper.NinjaMapper;
+import com.clanger.cadastroDeNinjas.model.NinjaModel;
+import com.clanger.cadastroDeNinjas.model.dto.NinjaDTO;
+import com.clanger.cadastroDeNinjas.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;

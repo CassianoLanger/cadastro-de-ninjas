@@ -1,6 +1,6 @@
-package com.clanger.cadastroDeNinjas.missions.repository;
+package com.clanger.cadastroDeNinjas.repository;
 
-import com.clanger.cadastroDeNinjas.missions.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.model.MissionsModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MissionRepository extends JpaRepository<MissionsModel,Long> {
