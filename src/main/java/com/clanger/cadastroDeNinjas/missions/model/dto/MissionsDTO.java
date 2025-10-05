@@ -16,5 +16,4 @@ public class MissionsDTO {
     private Long id;
     private String name;
     private String level;
-    private Set<NinjaModel> ninja;
 }

@@ -12,7 +12,6 @@ public class MissionsMapper {
                  .id(missionsDTO.getId())
                  .name(missionsDTO.getName())
                  .level(missionsDTO.getLevel())
-                 .ninja(missionsDTO.getNinja())
                  .build();
 
     }
@@ -22,7 +21,6 @@ public class MissionsMapper {
                 .id(missionsModel.getId())
                 .name(missionsModel.getName())
                 .level(missionsModel.getLevel())
-                .ninja(missionsModel.getNinja())
                 .build();
     }
 }
