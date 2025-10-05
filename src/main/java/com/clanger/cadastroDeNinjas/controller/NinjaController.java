@@ -39,8 +39,9 @@ public class NinjaController {
 
     // Procurar ninja por ID(Read)
     @GetMapping("/{id}")
-    public NinjaDTO getNinjaById(@PathVariable Long id){
-        return ninjaService.findById(id);
+    public ResponseEntity<NinjaDTO> getNinjaById(@PathVariable Long id){
+        NinjaDTO ninja = ninjaService.findById(id);
+        return ResponseEntityUtil.responseEntityReturn(ninja);
     }
 
     //Alterar dados do ninja(Update)

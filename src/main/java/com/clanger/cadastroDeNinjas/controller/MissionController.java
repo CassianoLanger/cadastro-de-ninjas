@@ -26,13 +26,14 @@ public class MissionController {
     @PostMapping("/new")
     public ResponseEntity<MissionsDTO> postMission(@RequestBody MissionsDTO mission){
         MissionsDTO newMission = missionService.postMission(mission);
-        return responseEntityReturn(mission);
+        ResponseEntityUtil.responseEntityReturn(mission);
+        return ResponseEntityUtil.responseEntityReturn(mission);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<MissionsDTO> getMission(@PathVariable Long id){
         MissionsDTO mission = missionService.getMission(id);
-        return responseEntityReturn(mission);
+        return ResponseEntityUtil.responseEntityReturn(mission);
     }
 
     @PutMapping("/{id}")
@@ -48,11 +49,5 @@ public class MissionController {
             return ResponseEntity.ok().body("ID" + id + "deleted");
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID" + id + " NOT FOUND");
-    }
-
-    private ResponseEntity<MissionsDTO> responseEntityReturn(MissionsDTO missionsDTO){
-        if(missionsDTO != null) { return ResponseEntity.status(HttpStatus.FOUND).body(missionsDTO); }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 }
