@@ -41,11 +41,12 @@ public class NinjaService {
         ninjaRepository.deleteById(id);
     }
 
-    public NinjaDTO putNinja(Long id, NinjaModel ninja) {
-
-        if(ninjaRepository.existsById(id)){
-            ninja.setId(id);
-           return ninjaMapper.map(ninjaRepository.save(ninja));
+    public NinjaDTO putNinja(Long id, NinjaDTO ninja) {
+        Optional<NinjaModel> ninjaOptional = ninjaRepository.findById(id);
+        if(ninjaOptional.isPresent()){
+            NinjaModel ninjaModel = ninjaMapper.map(ninja);
+            ninjaModel.setId(id);
+           return ninjaMapper.map(ninjaRepository.save(ninjaModel));
         } else {
             return null;
         }
