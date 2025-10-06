@@ -7,6 +7,7 @@ import lombok.*;
 @Table(name = "tb_ninjas")
 @Data
 @Builder
+@ToString(exclude = "mission")
 @NoArgsConstructor
 @AllArgsConstructor
 public class NinjaModel {

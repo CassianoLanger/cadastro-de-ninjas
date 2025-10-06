@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "tb_missions")
 @Data
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class MissionsModel {
