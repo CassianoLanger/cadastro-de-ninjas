@@ -33,8 +33,8 @@ public class NinjaController {
 
     // Mostrar todos os ninjas(Read)
     @GetMapping("/all")
-    public List<NinjaDTO> getAllNinjas(){
-        return ninjaService.getAllNinjas();
+    public ResponseEntity<List<NinjaDTO>> getAllNinjas(){
+        return ResponseEntityUtil.responseEntityReturn(ninjaService.getAllNinjas());
     }
 
     // Procurar ninja por ID(Read)
@@ -46,9 +46,9 @@ public class NinjaController {
 
     //Alterar dados do ninja(Update)
     @PutMapping("/{id}")
-    public NinjaDTO updateNinja(@PathVariable Long id,
+    public ResponseEntity<NinjaDTO> updateNinja(@PathVariable Long id,
                               @RequestBody NinjaDTO ninja){
-        return ninjaService.putNinja(id, ninja);
+        return ResponseEntityUtil.responseEntityReturn(ninjaService.putNinja(id, ninja));
     }
 
     //Deletar Ninja(Delete)

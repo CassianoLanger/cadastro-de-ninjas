@@ -19,8 +19,8 @@ public class MissionController {
     }
 
     @GetMapping("/all")
-    public List<MissionsDTO> getMissions(){
-        return missionService.getAll();
+    public ResponseEntity<List<MissionsDTO>> getMissions(){
+        return ResponseEntityUtil.responseEntityReturn(missionService.getAll());
     }
 
     @PostMapping("/new")
