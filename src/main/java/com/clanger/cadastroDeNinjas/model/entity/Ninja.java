@@ -1,4 +1,4 @@
-package com.clanger.cadastroDeNinjas.model;
+package com.clanger.cadastroDeNinjas.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +10,7 @@ import lombok.*;
 @ToString(exclude = "mission")
 @NoArgsConstructor
 @AllArgsConstructor
-public class NinjaModel {
+public class Ninja {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +31,5 @@ public class NinjaModel {
 
     @ManyToOne
     @JoinColumn(name = "mission_id")
-    private MissionsModel mission;
+    private Missions mission;
 }

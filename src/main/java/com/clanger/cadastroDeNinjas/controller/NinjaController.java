@@ -1,7 +1,7 @@
 package com.clanger.cadastroDeNinjas.controller;
 
 import com.clanger.cadastroDeNinjas.model.dto.NinjaDTO;
-import com.clanger.cadastroDeNinjas.service.NinjaService;
+import com.clanger.cadastroDeNinjas.model.service.NinjaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

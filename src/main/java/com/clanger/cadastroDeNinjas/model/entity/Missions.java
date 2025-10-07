@@ -1,4 +1,4 @@
-package com.clanger.cadastroDeNinjas.model;
+package com.clanger.cadastroDeNinjas.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class MissionsModel {
+public class Missions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +28,6 @@ public class MissionsModel {
 
     @OneToMany(mappedBy = "mission")
     @JsonIgnore
-    private Set<NinjaModel> ninja;
+    private Set<Ninja> ninja;
 
 }

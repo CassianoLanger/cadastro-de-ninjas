@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <title>Ninjas</title>
+  </head>
+  <body>
+    <h1>Ninjas</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Rank</th>
+          <th>Missions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each ="ninja: ${all}">
+          <td th:text="ninja: ${ninja.id}"></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </body>
+</html>

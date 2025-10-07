@@ -1,6 +1,6 @@
 package com.clanger.cadastroDeNinjas.model.dto;
 
-import com.clanger.cadastroDeNinjas.model.MissionsModel;
+import com.clanger.cadastroDeNinjas.model.entity.Missions;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,5 +17,5 @@ public class NinjaDTO {
     private String email;
     private int age;
     private String rank;
-    private MissionsModel mission;
+    private Missions mission;
 }
